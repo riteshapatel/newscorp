@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-
+const hostUrl = 'http://0.0.0.0:3003';
 /**
  * @function fetchCategories
  * Fetches categories
@@ -9,7 +9,7 @@ import axios from 'axios';
 export function fetchCategories (dispatch) {
     dispatch({ type: 'FETCH_CATEGORIES' });
 
-    axios.get('http://localhost:3003/categories')
+    axios.get(hostUrl + '/categories')
         .then (res => {
             console.log('data ', res.data);
             dispatch({ type: 'FETCH_CATEGORIES_FULFILLED', payload: res.data.data })
@@ -28,7 +28,7 @@ export function fetchCategories (dispatch) {
 export function fetchBooks (dispatch, id) {
     dispatch({ type: 'FETCH_BOOKS' });
 
-    axios.post('http://localhost:3003/books', {
+    axios.post(hostUrl + '/books', {
         category_id: id
     })
     .then(res => {
@@ -50,7 +50,7 @@ export function fetchBooks (dispatch, id) {
 export function setAlsoViewed (dispatch, arr) {
     dispatch({ type: 'SAVE_DATA' });
 
-    axios.post('http://localhost:3003/items', {
+    axios.post(hostUrl + '/items', {
         arr: arr
     })
     .then(res => {
