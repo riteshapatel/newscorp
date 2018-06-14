@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Web Development & Design",
+        "id": 1
+    },
+    {
+        "name": "Security & Encryption",
+        "id": 2
+    },
+    {
+        "name": "Databases & Big Data",
+        "id": 3
+    },
+    {
+        "name": "Certification",
+        "id": 4
+    }
+]
